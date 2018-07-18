@@ -6,8 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Highstock Example</title>
+    <link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css" />
 
     <style type="text/css">
+        .highcharts-point {
+            fill: greenyellow;
+        }
     </style>
 </head>
 <body>
@@ -18,11 +22,12 @@
     <script src="https://www.highcharts.com/code/modules/exporting.js"></script>
     <script src="https://www.highcharts.com/code/modules/export-data.js"></script>
 
-    <div id="container" style="height: 400px; min-width: 310px"></div>
+    <div id="container" style="height: 360px; min-width: 310px"></div>
 
 
     <script type="text/javascript">
-        $.getJSON('https://cdn.rawgit.com/highcharts/highcharts/057b672172ccc6c08fe7dbb27fc17ebca3f5b770/samples/data/usdeur.json', function (data) {
+        $.getJSON('https://jsonblob.com/api/jsonBlob/45415df5-8a3d-11e8-8a0f-3b0c1d98b822', function (data) {
+
 
             // Create the chart
             Highcharts.stockChart('container', {
@@ -35,7 +40,7 @@
                 },
 
                 title: {
-                    text: 'AAPL Stock Price'
+                    text: 'Mathematics'
                 },
 
                 yAxis: {
@@ -45,8 +50,12 @@
                 },
 
                 series: [{
-                    name: 'AAPL Stock Price',
+                    name: 'Mathematics',
                     data: data,
+                    marker: {
+                        enabled: true,
+                        radius: 3,
+                    },
                     threshold: null,
                     fillColor: {
                         linearGradient: {
